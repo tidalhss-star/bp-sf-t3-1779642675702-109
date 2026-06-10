@@ -1,214 +1,497 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>주식투자 리서치 및 기술 인프라 저널</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-color: #ffffff;
-      --text-color: #0f172a;
-      --accent-color: #3b82f6;
-      --muted-color: #64748b;
-      --border-color: #e2e8f0;
-      --font-swiss: 'Inter', 'Noto Sans KR', sans-serif;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="editorial-apple">
+    <meta name="bpaas-design-theme" content="kr-noir-gold">
+    <title>구글 상위노출 대행 | 마포 주식투자 전문가 | 노이어 골드</title>
+    <meta name="description" content="마포에서 가장 강력한 주식투자 전략, 구글 상위노출 대행으로 당신의 자산을 폭발시키세요. 010-6279-0862. 노이어 골드 에디토리얼.">
+    <meta name="keywords" content="구글 상위노출 대행, 마포 주식투자, 주식투자 전략, 상위노출, 검색엔진 최적화, 노이어 골드">
+    <link rel="canonical" href="https://sf-t3-1779642675702-109.vercel.app">
+    <meta property="og:title" content="구글 상위노출 대행 | 마포 주식투자 | 노이어 골드">
+    <meta property="og:description" content="마포에서 가장 강력한 주식투자 전략, 구글 상위노출 대행으로 당신의 자산을 폭발시키세요.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sf-t3-1779642675702-109.vercel.app">
+    <meta property="og:image" content="https://sf-t3-1779642675702-109.vercel.app/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="구글 상위노출 대행 | 마포 주식투자 | 노이어 골드">
+    <meta name="twitter:description" content="마포에서 가장 강력한 주식투자 전략, 구글 상위노출 대행으로 당신의 자산을 폭발시키세요.">
+    <meta name="twitter:image" content="https://sf-t3-1779642675702-109.vercel.app/og-image.jpg">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "노이어 골드 - 구글 상위노출 대행",
+        "description": "마포 지역 주식투자 전문, 구글 상위노출 대행 서비스",
+        "url": "https://sf-t3-1779642675702-109.vercel.app",
+        "telephone": "+82-10-6279-0862",
+        "areaServed": "마포",
+        "serviceType": ["구글 상위노출 대행", "주식투자 전략"]
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: var(--font-swiss);
-      line-height: 1.7;
-      letter-spacing: -0.01em;
-      padding: 0 24px;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 60px 0;
-    }
-    header {
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 24px;
-      margin-bottom: 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-    }
-    .logo {
-      font-size: 1.25rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      text-decoration: none;
-      color: var(--text-color);
-    }
-    nav { display: flex; gap: 20px; }
-    nav a {
-      color: var(--muted-color);
-      text-decoration: none;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-weight: 600;
-      transition: color 0.2s ease;
-    }
-    nav a:hover { color: var(--accent-color); }
-    main { padding-bottom: 60px; }
-    .meta-tag {
-      font-size: 0.75rem;
-      font-family: monospace;
-      text-transform: uppercase;
-      color: var(--accent-color);
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      margin-bottom: 16px;
-      display: inline-block;
-    }
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.03em;
-      color: var(--text-color);
-      margin-bottom: 32px;
-    }
-    .content {
-      font-size: 1.05rem;
-      color: var(--text-color);
-      margin-bottom: 48px;
-      font-weight: 300;
-    }
-    .content p { margin-bottom: 20px; }
-    .juice-link {
-      color: var(--accent-color);
-      text-decoration: none;
-      border-bottom: 1px solid var(--accent-color);
-      font-weight: 600;
-      transition: all 0.2s ease;
-    }
-    .juice-link:hover {
-      background-color: rgba(59, 130, 246, 0.05);
-    }
-    .post-grid {
-      border-top: 1px solid var(--border-color);
-      padding-top: 40px;
-      margin-top: 40px;
-    }
-    .grid-title {
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--muted-color);
-      margin-bottom: 24px;
-    }
-    .posts-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .post-card {
-      border: 1px solid var(--border-color);
-      padding: 24px;
-      border-radius: 4px;
-      text-decoration: none;
-      color: var(--text-color);
-      transition: all 0.2s ease;
-    }
-    .post-card:hover {
-      border-color: var(--accent-color);
-      transform: translateY(-2px);
-    }
-    .post-card h3 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .post-card p {
-      font-size: 0.9rem;
-      color: var(--muted-color);
-      font-weight: 300;
-    }
-    footer {
-      border-top: 1px solid var(--border-color);
-      padding-top: 24px;
-      margin-top: 60px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      color: var(--muted-color);
-    }
-    footer a { color: var(--muted-color); text-decoration: none; }
-    footer a:hover { color: var(--accent-color); }
-    @media(max-width: 768px) {
-      header { flex-direction: column; align-items: flex-start; gap: 16px; }
-      h1 { font-size: 1.8rem; }
-    }
-  </style>
+    </script>
+    <style>
+        /* Reset & Base */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: #1a1a1a;
+            color: #fafaf5;
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            line-height: 1.8;
+            letter-spacing: 0.02em;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 72px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 3.5rem; margin-bottom: 24px; }
+        h2 { font-size: 2.2rem; margin-bottom: 48px; text-transform: uppercase; border-bottom: 1px solid #c5a880; padding-bottom: 16px; }
+        h3 { font-size: 1.5rem; margin-bottom: 16px; }
+
+        p {
+            margin-bottom: 24px;
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        a {
+            color: #c5a880;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        a:hover { border-bottom-color: #c5a880; }
+
+        /* Drop Cap */
+        .drop-cap::first-letter {
+            float: left;
+            font-size: 4.5rem;
+            line-height: 0.8;
+            padding-right: 12px;
+            padding-top: 4px;
+            color: #c5a880;
+            font-weight: 700;
+        }
+
+        /* Header & Nav */
+        header {
+            padding: 72px 0 48px;
+            border-bottom: 1px solid #c5a880;
+        }
+
+        .site-title {
+            font-size: 1.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #c5a880;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 48px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #fafaf5;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 1px;
+            background: #c5a880;
+            margin: 4px 0;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 120px 0;
+            position: relative;
+            background: linear-gradient(145deg, #1a1a1a 0%, #2a2a20 40%, #1a1a1a 100%);
+            border-bottom: 1px solid #c5a880;
+            margin-bottom: 120px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, rgba(197,168,128,0.08) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            letter-spacing: 0.12em;
+            color: #fafaf5;
+            position: relative;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: #c5a880;
+            letter-spacing: 0.1em;
+            margin-top: 24px;
+            border-left: 2px solid #c5a880;
+            padding-left: 24px;
+        }
+
+        .hero .cta-phone {
+            display: inline-block;
+            margin-top: 48px;
+            font-size: 1.6rem;
+            letter-spacing: 0.15em;
+            color: #c5a880;
+            border: 1px solid #c5a880;
+            padding: 16px 48px;
+            transition: all 0.3s ease;
+        }
+
+        .hero .cta-phone:hover {
+            background: #c5a880;
+            color: #1a1a1a;
+            border-color: #c5a880;
+        }
+
+        /* Sections */
+        section {
+            padding: 120px 0;
+            border-bottom: 1px solid rgba(197,168,128,0.2);
+        }
+
+        section:last-of-type { border-bottom: none; }
+
+        .section-gap { margin-bottom: 120px; }
+
+        /* Fine Borders */
+        .fine-border {
+            border: 1px solid #c5a880;
+            padding: 48px;
+            position: relative;
+        }
+
+        .fine-border::before {
+            content: '';
+            position: absolute;
+            top: 8px; left: 8px; right: -8px; bottom: -8px;
+            border: 1px solid rgba(197,168,128,0.3);
+            pointer-events: none;
+        }
+
+        /* Review Cards */
+        .review-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .review-card {
+            padding: 48px;
+            border: 1px solid #c5a880;
+            position: relative;
+        }
+
+        .review-card .meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            color: #c5a880;
+        }
+
+        .review-card .stars {
+            color: #c5a880;
+            font-size: 1.2rem;
+            letter-spacing: 0.2em;
+        }
+
+        .review-card blockquote {
+            font-style: italic;
+            font-size: 1.15rem;
+            line-height: 1.9;
+            border-left: 2px solid #c5a880;
+            padding-left: 24px;
+        }
+
+        /* Services List */
+        .service-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .service-list li {
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(197,168,128,0.3);
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .service-list li::before {
+            content: '◆';
+            color: #c5a880;
+            margin-right: 16px;
+            font-size: 0.7rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 72px 0;
+            border-top: 1px solid #c5a880;
+            margin-top: 120px;
+            text-align: center;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            color: rgba(250,250,245,0.6);
+        }
+
+        footer a { color: #c5a880; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container { padding: 0 24px; }
+
+            h1 { font-size: 2.4rem; }
+            h2 { font-size: 1.6rem; }
+            .hero h1 { font-size: 2.6rem; }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #1a1a1a;
+                padding: 24px;
+                border-bottom: 1px solid #c5a880;
+                gap: 24px;
+            }
+
+            .nav-links.active { display: flex; }
+
+            .hamburger { display: flex; }
+
+            nav { position: relative; }
+
+            .hero .cta-phone {
+                font-size: 1.2rem;
+                padding: 12px 32px;
+            }
+
+            .review-card { padding: 24px; }
+
+            .fine-border { padding: 24px; }
+
+            header { padding: 48px 0 24px; }
+            section { padding: 72px 0; }
+            .hero { padding: 72px 0; margin-bottom: 72px; }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
     <header>
-      <a href="/" class="logo">T3.SWISS</a>
-      <nav><a href="index.html">HOME</a> | <a href="sitemap.xml">SITEMAP</a></nav>
-    </header>
-    <main>
-      <div class="meta-tag">SWISS ACCENTED GRID SYSTEM</div>
-      <h1>주식투자 리서치 및 기술 인프라 저널</h1>
-      <div class="content">
-        환영합니다. 본 블로그 저널은 현대적이고 세련된 <strong>주식투자</strong> 분야의 실용 정보와 심도 있는 기술 에세이를 기록하는 전문 아카이브 공간입니다. 아래의 엄선된 아티클 리스트를 통해 다양한 인사이트를 확인하시기 바랍니다.
-      </div>
-      
-      
-      <div class="post-grid">
-        <div class="grid-title">Recent Post Archive</div>
-        <div class="posts-list">
-          
-        <a href="posts/normal-1.html" class="post-card">
-          <h3>주식투자: 주식투자: 배당주 투자로 은퇴 연금 마련하기</h3>
-          <p>불확실성이 극대화되는 거시경제 파동 속에서 안정적이고 마르지 않는 고정 배당 수익을 가져다주는 우량 배당 귀족주 장기 투자는 직장인들에게 가장 든든한 금융 방패입니다. 배당 복리 ...</p>
-        </a>
-      
-
-        <a href="posts/normal-2.html" class="post-card">
-          <h3>주식투자: 주식투자: 코스트 에버리지 우량주 분할 매수</h3>
-          <p>시장 타이밍을 예측해 최저점에 주식을 매수하려는 헛된 시도보다는, 매월 일정한 시기에 정해진 금액만큼 대형 지수 추종 ETF나 우량 기업의 지분을 꾸준히 사 모으는 분할 매수 적립...</p>
-        </a>
-      
-
-        <a href="posts/normal-3.html" class="post-card">
-          <h3>주식투자: 주식투자: 자산 배분 전략과 위험 분산</h3>
-          <p>완벽한 위험 통제를 달성하는 자산 배분의 핵심은 주식뿐만 아니라 안전한 실물 자산 및 대체 자산에 적정한 밸런스 비중을 유지하는 것입니다. 이는 일시적 하락 파동에서도 내 멘탈과 ...</p>
-        </a>
-      
-
-        <a href="posts/juice-1.html" class="post-card">
-          <h3>주식투자 전문가들이 엄선한 구글 상위노출 대행 상세 비법 가이드</h3>
-          <p>성공적인 주식투자를 위해 우량 기업의 재무제표와 분기 배당 성향을 꼼꼼하게 연구하다 보면, 리스크의 철저한 분산을 보장하는 것은 오직 변동 없는 오프라인 실물 경제의 든든한 고정 ...</p>
-        </a>
-      
-
-        <a href="posts/juice-2.html" class="post-card">
-          <h3>주식투자 전문가들이 엄선한 구글 상위노출 대행 상세 비법 가이드</h3>
-          <p>성공적인 주식투자를 위해 우량 기업의 재무제표와 분기 배당 성향을 꼼꼼하게 연구하다 보면, 리스크의 철저한 분산을 보장하는 것은 오직 변동 없는 오프라인 실물 경제의 든든한 고정 ...</p>
-        </a>
-      
+        <div class="container">
+            <div class="site-title">노이어 골드</div>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">홈</a></li>
+                    <li><a href="#services">서비스</a></li>
+                    <li><a href="#reviews">리뷰</a></li>
+                    <li><a href="tel:+821062790862">010-6279-0862</a></li>
+                </ul>
+                <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
         </div>
-      </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <h1>구글 상위노출<br>대행의 진실</h1>
+                <div class="subtitle">마포에서 가장 강력한 주식투자 전략, 당신의 자산을 폭발시키는 검색엔진 최적화</div>
+                <a href="tel:+821062790862" class="cta-phone">010-6279-0862</a>
+            </div>
+        </section>
+
+        <!-- Introduction Section -->
+        <section>
+            <div class="container drop-cap">
+                <h2>당신은 속고 있다</h2>
+                <p>주식투자? 구글 상위노출 대행? 대부분의 업체는 당신에게 거짓말을 판다. 나는 마포에서 10년 넘게 진짜를 증명해왔다. 알고리즘은 변하고, 시장은 흔들리지만, 내 전략은 흔들리지 않는다. 왜? 나는 구글의 DNA를 해부했기 때문이다.</p>
+                <p>당신이 원하는 건 단순하다: 상위노출. 그리고 그 결과로 오는 부. 나는 그 길을 정확히 알고 있다. 노이어 골드의 철학은 단 하나, '결과로 말한다.' 당신이 주식투자로 성공할 자격이 있는지, 나와 함께라면 증명할 수 있다.</p>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <div class="container">
+                <h2>내가 제공하는 것</h2>
+                <ul class="service-list">
+                    <li><strong>구글 상위노출 대행</strong> — 키워드 분석부터 백링크 전략까지, 당신의 사이트를 1페이지에 고정시킨다.</li>
+                    <li><strong>주식투자 컨설팅</strong> — 데이터 기반의 투자 전략, 마포 지역 맞춤형 포트폴리오 설계.</li>
+                    <li><strong>콘텐츠 제국 건설</strong> — 당신의 브랜드를 지배하는 서사, 검색엔진이 사랑하는 텍스트.</li>
+                    <li><strong>PBN 네트워크 구축</strong> — 티어3 수준의 파워풀한 링크 구조, 경쟁자를 무너뜨리는 기술.</li>
+                </ul>
+                <div class="fine-border" style="margin-top: 72px;">
+                    <p style="margin:0; font-size: 1.3rem; letter-spacing: 0.1em;">"상위노출은 예술이다. 그리고 나는 그 예술의 거장이다."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews">
+            <div class="container">
+                <h2>입증된 결과</h2>
+                <div class="review-grid">
+                    <div class="review-card">
+                        <div class="meta">
+                            <span>김민수</span>
+                            <span>2024-03-12</span>
+                        </div>
+                        <div class="stars">★★★★★</div>
+                        <blockquote>구글 상위노출 대행, 진짜 효과 봤습니다. 주식투자 블로그가 2주 만에 1페이지에 안착했어요. 마포에서 이 정도 퀄리티는 처음입니다.</blockquote>
+                    </div>
+                    <div class="review-card">
+                        <div class="meta">
+                            <span>이지은</span>
+                            <span>2024-02-28</span>
+                        </div>
+                        <div class="stars">★★★★★</div>
+                        <blockquote>노이어 골드의 접근법은 다릅니다. 그냥 키워드 넣는 게 아니라, 전체적인 서사를 만듭니다. 내 자산이 눈에 띄게 성장했어요.</blockquote>
+                    </div>
+                    <div class="review-card">
+                        <div class="meta">
+                            <span>박준호</span>
+                            <span>2024-01-15</span>
+                        </div>
+                        <div class="stars">★★★★☆</div>
+                        <blockquote>솔직히 처음에는 반신반의했어요. 그런데 결과가 말해주네요. 주식투자 정보 사이트가 하루 방문자 3배 증가. 감사합니다.</blockquote>
+                    </div>
+                    <div class="review-card">
+                        <div class="meta">
+                            <span>최유진</span>
+                            <span>2023-12-20</span>
+                        </div>
+                        <div class="stars">★★★★★</div>
+                        <blockquote>마포에서 이렇게 확실한 구글 상위노출 대행 업체는 처음 봅니다. 전화 상담도 친절하고, 전략이 명확해요. 강력 추천.</blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section>
+            <div class="container">
+                <h2>지금 행동하라</h2>
+                <p style="font-size: 1.3rem; letter-spacing: 0.05em;">주식투자와 구글 상위노출 대행, 더 이상 미루지 마라. 경쟁자는 이미 움직이고 있다. 당신의 자리를 뺏기기 전에 전화하라.</p>
+                <div class="fine-border" style="text-align: center; margin-top: 48px;">
+                    <a href="tel:+821062790862" style="font-size: 2rem; letter-spacing: 0.15em; border: none; display: block; padding: 24px;">010-6279-0862</a>
+                    <p style="margin: 16px 0 0; font-size: 0.9rem; color: #c5a880;">상담은 24시간 가능, 당신의 결정을 기다린다.</p>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer>
-      <div>&copy; 2026 T3.SWISS. ALL RIGHTS RESERVED.</div>
+
+    
+
+
+<!-- PBN Recent Posts Feed Section -->
+<section class="recent-posts-section" aria-label="최신 글 피드" style="padding:60px 20px;background:#f7fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
+  <div style="max-width:1100px;margin:0 auto">
+    <h3 style="font-size:1.5rem;font-weight:800;color:#1a202c;text-align:center;margin-bottom:32px;letter-spacing:-0.025em">📝 최신 관련 포스트</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
+      
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
       <div>
-        <a href="sitemap.xml">SITEMAP</a> | 
-        <a href="#">PRIVACY</a> | 
-        <a href="#">DISCLAIMER</a>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>💡 GUIDE</span>
+          <time datetime="2026-06-10">2026-06-10</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">주식투자 해결 방법 총정리 — 전문가가 알려주는 5가지 팁</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis">제목: 창작한 제목 | "스니커즈 커스텀 작가"의 선택 갈등과 실패 원인 분석 아, 진짜... 나이키 SB Dunk Low 2003년판과 2021년 레트로 판에 대한 스티치 밀도와 박스지 재질 차이를 판단하기 위해선 무엇부터 시작해야 하나요? ### 소제목#### 스티</p>
       </div>
-    </footer>
+      <a href="posts/guide-001-i8hz0v.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-06-10">2026-06-10</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">창작한 제목</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis">### 포스트 DNA4023f91e "싱글 프레임 파티벌: 더든의 전설적인 입문" 아, 진짜... 파이트 클럽 영화에서 타일러 더든이 등장하기 전 싱글 프레임 장면들의 비밀은 무엇인지 알아보겠습니다. #### 소제목1. ## 초기 실패와 비평가들의 반응2. ### 더든</p>
+      </div>
+      <a href="posts/qa-002-i8hz0v.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    </div>
   </div>
+</section>
+<footer>
+        <div class="container">
+            <p>&copy; 2024 노이어 골드 — 구글 상위노출 대행 &amp; 주식투자 전문. 마포.</p>
+            <p style="margin-top: 16px;">서울시 마포구 | 전화: <a href="tel:+821062790862">010-6279-0862</a></p>
+            <p style="margin-top: 8px; font-size: 0.75rem;">모든 콘텐츠는 저작권의 보호를 받습니다. 무단 복제 금지.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        document.getElementById('hamburger').addEventListener('click', function() {
+            const nav = document.getElementById('navLinks');
+            nav.classList.toggle('active');
+        });
+
+        // Close menu on link click (mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
